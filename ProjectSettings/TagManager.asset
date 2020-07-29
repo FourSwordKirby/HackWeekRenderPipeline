@@ -13,12 +13,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Mask
+  - Wall
   - StaticBackground
   - PostProcessingMain
-  - 
-  - 
+  - Player
+  - TestCombo
   - 
   - 
   - EnvironmentA
