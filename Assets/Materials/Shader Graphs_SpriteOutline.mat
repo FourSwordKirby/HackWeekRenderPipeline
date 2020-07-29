@@ -50,6 +50,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - CORNERS_ON: 1
-    - Vector1_1C8A200D: 0.02
+    - Vector1_1C8A200D: -0.61
     m_Colors:
     - Color_BA3E555A: {r: 0.20531365, g: 0.5086947, b: 2.9017668, a: 1}
