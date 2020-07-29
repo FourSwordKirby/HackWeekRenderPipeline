@@ -23,8 +23,8 @@ TagManager:
   - 
   - EnvironmentA
   - Lighting
-  - 
-  - 
+  - EnvironmentSeeThrough
+  - EnvironmentMask
   - 
   - 
   - 
