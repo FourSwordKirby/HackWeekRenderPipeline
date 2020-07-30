@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: Mask
+  m_Name: StencilMask
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    passTag: Mask
+    passTag: StencilMask
     Event: 250
     filterSettings:
       RenderQueueType: 0
       LayerMask:
         serializedVersion: 2
-        m_Bits: 0
+        m_Bits: 256
       PassNames: []
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
       stencilCompareFunction: 8
       passOperation: 2
       failOperation: 0
-      zFailOperation: 2
+      zFailOperation: 0
     cameraSettings:
       overrideCamera: 0
       restoreCamera: 1
@@ -49,11 +49,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: MySeeThrough
+  m_Name: PaintDither
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    passTag: MySeeThrough
+    passTag: PaintDither
     Event: 250
     filterSettings:
       RenderQueueType: 0
@@ -94,8 +94,9 @@ MonoBehaviour:
   - {fileID: -7644060012490727130}
   - {fileID: 8522506519413811674}
   - {fileID: 8316115410507976089}
+  - {fileID: 334825041347324757}
   - {fileID: -1507993728224147552}
-  m_RendererFeatureMap: 26e1b829ebd7ea95da699c758606467699cd7abae7c66873a0c7aea1b18712eb
+  m_RendererFeatureMap: 26e1b829ebd7ea95da699c758606467699cd7abae7c6687355ab69e39989a504a0c7aea1b18712eb
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   shaders:
     blitPS: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
@@ -106,7 +107,7 @@ MonoBehaviour:
     fallbackErrorPS: {fileID: 4800000, guid: e6e9a19c3678ded42a3bc431ebef7dbd, type: 3}
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 65591
+    m_Bits: 66615
   m_TransparentLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -118,6 +119,45 @@ MonoBehaviour:
     failOperation: 0
     zFailOperation: 0
   m_ShadowTransparentReceive: 0
+--- !u!114 &334825041347324757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
+  m_Name: RenderSeeThroughTransparentWithDither
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    passTag: RenderSeeThroughTransparentWithDither
+    Event: 250
+    filterSettings:
+      RenderQueueType: 1
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 262144
+      PassNames: []
+    overrideMaterial: {fileID: 2100000, guid: 7a32245b469cf964fa8a18b2fb5525fb, type: 2}
+    overrideMaterialPassIndex: 0
+    overrideDepthState: 1
+    depthCompareFunction: 4
+    enableWrite: 1
+    stencilSettings:
+      overrideStencilState: 1
+      stencilReference: 1
+      stencilCompareFunction: 6
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
 --- !u!114 &8316115410507976089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,11 +168,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: MyMask
+  m_Name: RenderSeeThroughWithDither
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    passTag: MyMask
+    passTag: RenderSeeThroughWithDither
     Event: 250
     filterSettings:
       RenderQueueType: 0
@@ -146,9 +186,9 @@ MonoBehaviour:
     depthCompareFunction: 4
     enableWrite: 1
     stencilSettings:
-      overrideStencilState: 0
-      stencilReference: 0
-      stencilCompareFunction: 8
+      overrideStencilState: 1
+      stencilReference: 1
+      stencilCompareFunction: 6
       passOperation: 0
       failOperation: 0
       zFailOperation: 0
@@ -167,21 +207,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: SeeThrough
+  m_Name: StencilSeeThrough
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
-    passTag: SeeThrough
+    passTag: StencilSeeThrough
     Event: 250
     filterSettings:
       RenderQueueType: 0
       LayerMask:
         serializedVersion: 2
-        m_Bits: 1024
+        m_Bits: 262144
       PassNames: []
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
-    overrideDepthState: 1
+    overrideDepthState: 0
     depthCompareFunction: 4
     enableWrite: 1
     stencilSettings:
